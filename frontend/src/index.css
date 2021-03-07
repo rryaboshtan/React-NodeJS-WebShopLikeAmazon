@@ -114,7 +114,6 @@ h1 {
 
 h2 {
   font-size: 1.6rem;
-  padding: 1rem 0;
 }
 
 img {
@@ -140,21 +139,34 @@ main .card {
   padding: 1rem;
 }
 
-main .card > * {
-  margin-bottom: 1.5rem;
-}
-
 main .card a img.medium {
   max-width: 29rem;
   width: 100%;
 }
 
-main .card .rating span {
+main .card .card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+main .card .card-body .rating span {
   color: #f0c040;
   margin: 0.1rem;
 }
 
-main .card .price {
+main .card .card-body .rating span#reviews {
+  font-size: 1.5rem;
+}
+
+main .card .card-body .price {
+  margin-top: 1rem;
   font-size: 2rem;
 }
 
