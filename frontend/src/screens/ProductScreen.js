@@ -15,10 +15,10 @@ export default function ProductScreen(props) {
         <div>
             <Link to="/"> Back to result</Link>
             <div className="row top card card-border-none">
-                <div className="col-2">
+                <div className="col-50rem">
                     <img className="large" src={product.image} alt={product.name}></img>
                 </div>
-                <div className="col-1 card-body">
+                <div className="col-25rem card-body">
                     <ul>
                         <li>
                             <h1>
@@ -40,16 +40,16 @@ export default function ProductScreen(props) {
                         </li>
                     </ul>
                 </div>
-                <div className="col-1">
+                <div className="col-25rem">
                     <div className="card ">
                         <ul>
                             <li>
-                                <div className="row card-body">
+                                <div className="row">
                                     <div>
                                         Price
                                     </div>
-                                    <div className="price" style={{ backgroundColor: "red" }}>
-                                        ${product.price}
+                                    <div className="price"> ${product.price} 
+                                        
                                     </div>
                                 </div>
                             </li>

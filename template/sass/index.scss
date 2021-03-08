@@ -4,7 +4,8 @@ html {
 }
 
 body {
-    font: 1.9rem Helvetica;
+    font-size: 1.9rem; 
+    font-family: Helvetica, Arial, sans-serif;
     height: 100vh;
     margin: 0;
     -webkit-font-smoothing: antialiased;
@@ -44,10 +45,17 @@ header {
             color: white;
             font-size: 2.7rem;
             font-weight: bold;
+            &:hover {
+            text-decoration: underline;
+            }
         }
+        
     }
     .header-links a {
         color: white;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -64,6 +72,12 @@ header {
 .row.top {
     align-items: flex-start;
 }
+.col-25rem {
+    flex: 1 1 25rem;
+}
+.col-50rem {
+    flex: 2 1 50rem;
+}
 
 a {
     text-decoration: none;
@@ -71,7 +85,9 @@ a {
 
 a:hover {
     color: #ff8000;
+     
 }
+
 h1 {
     font-size: 1.8rem;
     padding: 1rem 0;
@@ -101,10 +117,42 @@ main {
         border: none;
         }
 
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            li {
+                margin-top: 1rem;
+                button {
+                    padding: 1rem;
+                    border-radius: 0.5rem;
+                    border: 0.1rem #a4a4a4 solid;
+                    font-size: 1.6rem; 
+                    // font-family: Helvetica, Arial, sans-serif;
+                    background-color: #f8f8f8;
+                    cursor: pointer;
+                    &.primary {
+                        background-color: #f0c040;
+                    }
+                    &.block {
+                        width: 100%;
+                    }
+                    &:hover {
+                        border: 0.2rem #404040 solid;
+                    }
+                }
+            }
+        }
+
         a {
-            img.medium {
-            max-width: 29rem;
-            width: 100%;
+            img{
+                &.medium {
+                    max-width: 29rem;
+                    width: 100%;
+                }
+                &.large {
+                    width: 100%;
+                }
             }
         }
         
@@ -131,6 +179,14 @@ main {
         }
        
     }
+}
+
+//ALERTS
+.success {
+    color: #20a020;
+}
+.error {
+    color: #a02020;
 }
 
 footer {

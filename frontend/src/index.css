@@ -5,7 +5,8 @@ html {
 }
 
 body {
-  font: 1.9rem Helvetica;
+  font-size: 1.9rem;
+  font-family: Helvetica, Arial, sans-serif;
   height: 100vh;
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -62,8 +63,16 @@ header .brand a {
   font-weight: bold;
 }
 
+header .brand a:hover {
+  text-decoration: underline;
+}
+
 header .header-links a {
   color: white;
+}
+
+header .header-links a:hover {
+  text-decoration: underline;
 }
 
 /* COMMON */
@@ -91,6 +100,18 @@ header .header-links a {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+.col-25rem {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 25rem;
+          flex: 1 1 25rem;
+}
+
+.col-50rem {
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 50rem;
+          flex: 2 1 50rem;
 }
 
 a {
@@ -137,8 +158,43 @@ main .card.card-border-none {
   border: none;
 }
 
+main .card ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+main .card ul li {
+  margin-top: 1rem;
+}
+
+main .card ul li button {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #a4a4a4 solid;
+  font-size: 1.6rem;
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+
+main .card ul li button.primary {
+  background-color: #f0c040;
+}
+
+main .card ul li button.block {
+  width: 100%;
+}
+
+main .card ul li button:hover {
+  border: 0.2rem #404040 solid;
+}
+
 main .card a img.medium {
   max-width: 29rem;
+  width: 100%;
+}
+
+main .card a img.large {
   width: 100%;
 }
 
@@ -167,6 +223,14 @@ main .card .card-body .rating span:last-child {
 main .card .card-body .price {
   font-size: 1.5rem;
   margin-top: 0.7rem;
+}
+
+.success {
+  color: #20a020;
+}
+
+.error {
+  color: #a02020;
 }
 
 footer {
