@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  font: 1.6 rem Helvetica;
+  font: 1.9rem Helvetica;
   height: 100vh;
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -67,19 +67,7 @@ header .header-links a {
 }
 
 /* COMMON */
-.flexCentered {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.flexRow{
+.row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,6 +85,12 @@ header .header-links a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.row.top {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 a {
@@ -139,6 +133,10 @@ main .card {
   padding: 1rem;
 }
 
+main .card.card-border-none {
+  border: none;
+}
+
 main .card a img.medium {
   max-width: 29rem;
   width: 100%;
@@ -164,12 +162,11 @@ main .card .card-body .rating span {
 main .card .card-body .rating span:last-child {
   color: #404040;
   font-size: 1.5rem;
-  color: #404040;
 }
 
 main .card .card-body .price {
-  margin-top: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  margin-top: 0.7rem;
 }
 
 footer {

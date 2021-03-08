@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    font: 1.6 rem Helvetica;
+    font: 1.9rem Helvetica;
     height: 100vh;
     margin: 0;
     -webkit-font-smoothing: antialiased;
@@ -52,20 +52,19 @@ header {
 }
 
 /* COMMON */
-.flexCentered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.flexRow {
+.row {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
-.flexRow.center {
+.row.center {
     justify-content: center;
 }
+.row.top {
+    align-items: flex-start;
+}
+
 a {
     text-decoration: none;
 }
@@ -79,7 +78,6 @@ h1 {
 }
 h2 {
     font-size: 1.6rem;
-    // padding: 0rem 0;
 }
 
 img {
@@ -98,11 +96,11 @@ main {
         border-radius: 0.5rem;
         margin: 1rem;
         padding: 1rem;
-        
-     
-        //  > * {
-        //      margin-bottom: 1.5rem;
-        //      }
+
+         &.card-border-none {
+        border: none;
+        }
+
         a {
             img.medium {
             max-width: 29rem;
@@ -113,46 +111,26 @@ main {
         .card-body{
             display: flex;
             flex-direction: column;
-            // align-items:flex-end;
             align-content: space-between;
-            // height: 200px;
+            
             .rating {
             span {
                 color: #f0c040;
                 margin: 0.1rem;
-<<<<<<< HEAD
                 &:last-child {
                     color: #404040;
                     font-size: 1.5rem;
                 }
             }
-            // font-size: 1.5rem;
-           
-=======
-                &:last-child{
-                    font-size: 1.5rem;
-                    color:#404040;
-                    }
-                }
+            
             }
-            // font-size: 1.5rem;
-            // span#reviews {
-            //     font-size: 1.5rem;
-
-            // }
             .price {
-                margin-top: 1rem;
-                font-size: 2rem;
+                font-size: 1.5rem;
+                margin-top: 0.7rem;
             }
->>>>>>> 166f67b9897053c7a2d086908b9990cbc7116efb
         }
-        
-        
-        
-
+       
     }
-    
-    
 }
 
 footer {
