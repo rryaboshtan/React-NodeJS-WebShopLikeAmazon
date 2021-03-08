@@ -161,7 +161,8 @@ main .card .card-body .rating span {
   margin: 0.1rem;
 }
 
-main .card .card-body .rating span#reviews {
+main .card .card-body .rating span:last-child {
+  color: #404040;
   font-size: 1.5rem;
 }
 

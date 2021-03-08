@@ -1,11 +1,14 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './index.css';
-import data from "./data";
-import Product from './components/Product';
+
+import {BrowserRouter, Route} from 'react-router-dom';
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
 
 function App() {
     return (
+        <BrowserRouter>
         <div className="grid-container">
             <header className="row">
                 <div className="brand">
@@ -24,21 +27,16 @@ function App() {
                 </div>
             </header>
             <main className="main">
-                <div className="row center">
-                    {data.products.map((product) => (
-
-                        <Product key={product._id} product={product}> </Product>
-                        
-                    ))
-                    }
-
-                </div>
+                <Route path="/" component={HomeScreen} exact></Route>
+                <Route path="/product/:id" component={ProductScreen}></Route>
+                
             </main>
 
             <footer className="flexCentered">
                 All rights reserved.
                   </footer>
         </div>
+        </BrowserRouter>
 
     );
 }
