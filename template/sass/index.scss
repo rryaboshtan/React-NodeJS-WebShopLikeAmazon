@@ -57,13 +57,13 @@ header {
     justify-content: center;
     align-items: center;
 }
-.row {
+.flexRow {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
-.row.center {
+.flexRow.center {
     justify-content: center;
 }
 a {
@@ -120,6 +120,7 @@ main {
             span {
                 color: #f0c040;
                 margin: 0.1rem;
+<<<<<<< HEAD
                 &:last-child {
                     color: #404040;
                     font-size: 1.5rem;
@@ -127,13 +128,27 @@ main {
             }
             // font-size: 1.5rem;
            
+=======
+                &:last-child{
+                    font-size: 1.5rem;
+                    color:#404040;
+                    }
+                }
+            }
+            // font-size: 1.5rem;
+            // span#reviews {
+            //     font-size: 1.5rem;
+
+            // }
+            .price {
+                margin-top: 1rem;
+                font-size: 2rem;
+            }
+>>>>>>> 166f67b9897053c7a2d086908b9990cbc7116efb
         }
         
-        .price {
-            margin-top: 1rem;
-            font-size: 2rem;
-        }
-        }
+        
+        
 
     }
     

@@ -10,7 +10,7 @@ function App() {
     return (
         <BrowserRouter>
         <div className="grid-container">
-            <header className="row">
+            <header className="flexRow">
                 <div className="brand">
                     <button>
                         &#9776;
@@ -34,10 +34,9 @@ function App() {
 
             <footer className="flexCentered">
                 All rights reserved.
-                  </footer>
+            </footer>
         </div>
         </BrowserRouter>
-
     );
 }
 
