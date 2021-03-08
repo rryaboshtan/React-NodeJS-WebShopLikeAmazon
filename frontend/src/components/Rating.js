@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import '../index.css';
 
 export default function Rating(props) {
     const {rating, numReviews}=props;

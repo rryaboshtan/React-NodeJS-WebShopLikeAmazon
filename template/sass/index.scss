@@ -57,13 +57,13 @@ header {
     justify-content: center;
     align-items: center;
 }
-.row {
+.flexRow {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
-.row.center {
+.flexRow.center {
     justify-content: center;
 }
 a {
@@ -120,19 +120,25 @@ main {
             span {
                 color: #f0c040;
                 margin: 0.1rem;
+                &:last-child{
+                    font-size: 1.5rem;
+                    color:#404040;
+                    }
+                }
             }
             // font-size: 1.5rem;
-            span#reviews {
-                font-size: 1.5rem;
+            // span#reviews {
+            //     font-size: 1.5rem;
 
+            // }
+            .price {
+                margin-top: 1rem;
+                font-size: 2rem;
             }
         }
         
-        .price {
-            margin-top: 1rem;
-            font-size: 2rem;
-        }
-        }
+        
+        
 
     }
     

@@ -79,7 +79,7 @@ header .header-links a {
           align-items: center;
 }
 
-.row {
+.flexRow{
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -161,8 +161,9 @@ main .card .card-body .rating span {
   margin: 0.1rem;
 }
 
-main .card .card-body .rating span#reviews {
+main .card .card-body .rating span:last-child {
   font-size: 1.5rem;
+  color: #404040;
 }
 
 main .card .card-body .price {
