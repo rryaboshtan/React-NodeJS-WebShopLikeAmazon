@@ -16,7 +16,7 @@ function App() {
                         &#9776;
                     </button>
                     <a  href="/">
-                        amazon
+                        amazon                                    
                     </a>
                 </div>
 
@@ -29,7 +29,6 @@ function App() {
             <main className="main">
                 <Route path="/" component={HomeScreen} exact></Route>
                 <Route path="/product/:id" component={ProductScreen}></Route>
-                
             </main>
 
             <footer className="row center">
