@@ -5,29 +5,17 @@ import MessageBox from '../components/MessageBox';
 import LoadingBox from '../components/LoadingBox';
 import { useSelector} from 'react-redux';
 import { listProducts } from '../actions/productActions';
-// import store from '../store';
 
 export default function HomeScreen() {
-    // const dispatch = useDispatch();
     
-    // const { loading, products, error } = useSelector(state => state.productListReducer);
-    
-    //  console.log("Продукты в HomeScreen", products)
-    let OurState;
-    let loading = true, products = [], error;
     useEffect(() => {
         listProducts();
-        
-    //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    OurState = useSelector(state => state.productListReducer);
-    // OurState = store.getState();
-    // console.log(OurState);
-    console.log(OurState.products);
-    products = OurState.products;
-
-    loading = false;
+    const ProductState = useSelector(state => state.productListReducer);
+    
+    const {loading, products, error} = ProductState;
+    
     return (
         <div>
             { loading ?
