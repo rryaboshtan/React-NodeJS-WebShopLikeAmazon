@@ -8,7 +8,7 @@ app.get('/api/products', (req, res) => {
     })
 
 app.get('/', (req, res) => {
-    res.send('Server is ready');
+    res.send('Server is ready')
 });
 const port = process.env.port || 5000;
 app.listen(port, () => {

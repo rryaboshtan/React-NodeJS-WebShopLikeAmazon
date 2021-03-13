@@ -1,29 +1,33 @@
-import React, { useEffect, useState } from 'react';
-// import data from "../data";
+/* eslint-disable no-unused-expressions */
+import React, { useEffect } from 'react';
 import Product from '../components/Product';
-import axios from 'axios';
 import MessageBox from '../components/MessageBox';
 import LoadingBox from '../components/LoadingBox';
+import { useSelector} from 'react-redux';
+import { listProducts } from '../actions/productActions';
+// import store from '../store';
 
 export default function HomeScreen() {
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(false);
-
+    // const dispatch = useDispatch();
+    
+    // const { loading, products, error } = useSelector(state => state.productListReducer);
+    
+    //  console.log("Продукты в HomeScreen", products)
+    let OurState;
+    let loading = true, products = [], error;
     useEffect(() => {
-        const fetchData = async ()=> {
-            try {
-                setLoading(true);
-                const { data } = await axios.get('api/products');
-                setLoading(false);
-                setProducts(data.products);
-            } catch(err) {
-                setError(err.message);
-                setLoading(false);
-            }   
-        }
-        fetchData();
+        listProducts();
+        
+    //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
+    OurState = useSelector(state => state.productListReducer);
+    // OurState = store.getState();
+    // console.log(OurState);
+    console.log(OurState.products);
+    products = OurState.products;
+
+    loading = false;
     return (
         <div>
             { loading ?
