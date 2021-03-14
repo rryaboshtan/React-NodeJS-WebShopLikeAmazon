@@ -21,13 +21,14 @@ export const productListReducer = (state = { products: [] }, action) => {
     }
 }
 
-export const productDetailsReducer = (state = { product: {}, loading: true }, action) => {
+export const productDetailsReducer = (state = { alreadyLoaded: 0, product: {}, loading: true }, action) => {
     switch (action.type) {
         case PRODUCT_DETAILS_LOADING:
             return { loading: true };
 
         case PRODUCT_DETAILS_LOADED:
-            return { loading: false, product: action.payload };
+            state.alreadyLoaded++;
+            return { loading: false, product: action.payload, alreadyLoaded: state.alreadyLoaded};
 
         case PRODUCT_DETAILS_FAIL:
             console.log("Продукты в PRODUCT_LIST_FAIL", action.payload)

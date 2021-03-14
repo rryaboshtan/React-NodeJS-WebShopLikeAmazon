@@ -13,13 +13,14 @@ export default function ProductScreen(props) {
     const [qty, setQty] = useState(1);
     // const [repeatedProductLoad, setRepeatedProductLoad] = useState(false);
     const ProductDetailsState = useSelector(state => state.productDetailsReducer);
-    const { loading, error, product } = ProductDetailsState;
+    const { loading, error, product, alreadyLoaded} = ProductDetailsState;
     console.log('PRODUCT', product);
 
     
     useEffect(() => {
+        if (alreadyLoaded <2)
             detailsProduct(productId);
-    }, [productId]);
+    }, [alreadyLoaded, productId]);
 
     const addToCartHandler = () => {
         props.history.push(`/cart/${productId}?qty=${qty}`)
