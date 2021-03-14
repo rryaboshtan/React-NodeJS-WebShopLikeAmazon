@@ -10,7 +10,12 @@ app.get('/api/products', (req, res) => {
 app.get('/api/products/:id', (req, res) => {
     const product = data.products.find((x) => x._id === req.params.id);
     console.log("It's a SERVERRRRRRRRRRR", req.params.id);
-    res.send(product);
+
+    if (product)
+        res.send(product)
+    else
+        res.status(404).send({message: 'Product not found'})
+
 });
 
 app.get('/', (req, res) => {
