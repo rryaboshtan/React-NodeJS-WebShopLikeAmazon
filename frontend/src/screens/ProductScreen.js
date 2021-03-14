@@ -1,12 +1,27 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Rating from '../components/Rating';
-import data from '../data';
-import '../index.css';
 
 
 export default function ProductScreen(props) {
-    const product = data.products.find((x) => x._id === props.match.params.id);
+    const [product, setProduct] = useState({});
+    
+    const id = props.match.params.id;
+    
+    useEffect(() => {
+       
+            axios.get(`api/products/${id}`)
+            .then(resp => {
+                console.log("DATA", resp.data)
+                setProduct(resp.data);
+            })
+            .catch(error => 
+                console.error(error));
+    }, [id])
+
+    // console.log("DATA", data)
+
     if (!product)
         return <div>
             Product not found
@@ -71,7 +86,6 @@ export default function ProductScreen(props) {
                                 <button className="primary block"> Add to Cart</button>
                             </li>
                         </ul>
-
                     </div>
                 </div>
             </div>
