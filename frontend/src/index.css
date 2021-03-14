@@ -168,6 +168,21 @@ main .card ul li {
   margin-top: 1rem;
 }
 
+main .card ul li input,
+main .card ul li select,
+main .card ul li textarea {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem #a4a4a4 solid;
+  font-size: 1.6rem;
+}
+
+main .card ul li input:hover,
+main .card ul li select:hover,
+main .card ul li textarea:hover {
+  border: 0.2rem #404040 solid;
+}
+
 main .card ul li button {
   padding: 1rem;
   border-radius: 0.5rem;
