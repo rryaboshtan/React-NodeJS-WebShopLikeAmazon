@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {BrowserRouter, Route} from 'react-router-dom';
+import { BrowserRouter, Link, Route } from 'react-router-dom';
 import CartScreen from './screens/CartScreen';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
@@ -8,33 +8,33 @@ import ProductScreen from './screens/ProductScreen';
 function App() {
     return (
         <BrowserRouter>
-        <div className="grid-container">
-            <header className="row">
-                <div className="brand">
-                    <button>
-                        &#9776;
+            <div className="grid-container">
+                <header className="row">
+                    <div className="brand">
+                        <button>
+                            &#9776;
                     </button>
-                    <a  href="/">
-                        amazon                                    
-                    </a>
-                </div>
+                        <Link to="/">
+                            amazon
+                        </Link>
+                    </div>
 
-                <div className="header-links">
-                    <a href="/cart">Cart   </a>
-                    <a href="/signin">  Sign In</a>
+                    <div className="header-links">
+                        <Link to="/cart">Cart   </Link>
+                        <Link to="/signin">  Sign In</Link>
 
-                </div>
-            </header>
-            <main className="main">
-                <Route path="/cart/:id?" component={CartScreen} exact></Route>
-                <Route path="/" component={HomeScreen} exact></Route>
-                <Route path="/:id" component={ProductScreen} exact></Route>
-            </main>
+                    </div>
+                </header>
+                <main className="main">
+                    <Route path="/cart/:id?" component={CartScreen} exact></Route>
+                    <Route path="/" component={HomeScreen} exact></Route>
+                    <Route path="/:id" component={ProductScreen} exact></Route>
+                </main>
 
-            <footer className="row center">
-                All rights reserved.
+                <footer className="row center">
+                    All rights reserved.
             </footer>
-        </div>
+            </div>
         </BrowserRouter>
     );
 }
