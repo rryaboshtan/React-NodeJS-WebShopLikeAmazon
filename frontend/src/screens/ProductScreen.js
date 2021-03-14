@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { detailsProduct } from '../actions/productActions';
+import { ProductDetailsLoad } from '../actions/productActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import Rating from '../components/Rating';
@@ -13,13 +13,13 @@ export default function ProductScreen(props) {
     const [qty, setQty] = useState(1);
     // const [repeatedProductLoad, setRepeatedProductLoad] = useState(false);
     const ProductDetailsState = useSelector(state => state.productDetailsReducer);
-    const { loading, error, product, alreadyLoaded} = ProductDetailsState;
+    const { loading, error, product, alreadyLoaded } = ProductDetailsState;
     console.log('PRODUCT', product);
 
-    
+
     useEffect(() => {
-        if (alreadyLoaded <2)
-            detailsProduct(productId);
+        if (alreadyLoaded < 2)
+            ProductDetailsLoad(productId);
     }, [alreadyLoaded, productId]);
 
     const addToCartHandler = () => {
