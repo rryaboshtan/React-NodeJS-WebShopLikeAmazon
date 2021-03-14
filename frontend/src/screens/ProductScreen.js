@@ -14,15 +14,12 @@ export default function ProductScreen(props) {
     // const [repeatedProductLoad, setRepeatedProductLoad] = useState(false);
     const ProductDetailsState = useSelector(state => state.productDetailsReducer);
     const { loading, error, product } = ProductDetailsState;
+    console.log('PRODUCT', product);
 
-    const repeatedProductLoad = localStorage.getItem('repeatedProductLoad') || false;
+    
     useEffect(() => {
-         if (repeatedProductLoad === false) {
             detailsProduct(productId);
-            // setRepeatedProductLoad(true);
-            localStorage.setItem('repeatedProductLoad', true);
-        }
-    }, [productId, repeatedProductLoad]);
+    }, [productId]);
 
     const addToCartHandler = () => {
         props.history.push(`/cart/${productId}?qty=${qty}`)
