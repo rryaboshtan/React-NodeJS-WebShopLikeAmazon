@@ -14,13 +14,17 @@ export default function ProductScreen(props) {
     // const [repeatedProductLoad, setRepeatedProductLoad] = useState(false);
     const ProductDetailsState = useSelector(state => state.productDetailsReducer);
     const { loading, error, product, alreadyLoaded } = ProductDetailsState;
-    console.log('PRODUCT', product);
+    // console.log('PRODUCT', product);
 
+    const doubleLoaded = localStorage.getItem('doubleLoaded') || false;
 
     useEffect(() => {
-        if (alreadyLoaded < 2)
+        if (doubleLoaded === false) {
             ProductDetailsLoad(productId);
-    }, [alreadyLoaded, productId]);
+            localStorage.setItem('doubleLoaded', true);
+        }
+        
+    }, [doubleLoaded, productId]);
 
     const addToCartHandler = () => {
         props.history.push(`/cart/${productId}?qty=${qty}`)
