@@ -1,16 +1,23 @@
 /* eslint-disable no-unused-expressions */
-import React, { useEffect } from 'react';
+import React, {useCallback, useEffect } from 'react';
 import Product from '../components/Product';
 import MessageBox from '../components/MessageBox';
 import LoadingBox from '../components/LoadingBox';
 import { useSelector} from 'react-redux';
-import { listProducts } from '../actions/productActions';
+import { CProductActions } from '../actions/productActions';
 
 export default function HomeScreen() {
+    // const [productActions, setProductAction] = setState(new CProductActions());
+    // const ref = useRef(productActions)
     
+    const productActions = new CProductActions()
+    
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const listProducts = useCallback(productActions.listProducts, [])
     useEffect(() => {
         listProducts();
-    }, [])
+        
+        }, [listProducts])
 
     const ProductState = useSelector(state => state.productListReducer);
     

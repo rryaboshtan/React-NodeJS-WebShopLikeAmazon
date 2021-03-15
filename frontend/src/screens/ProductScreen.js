@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { ProductDetailsLoad } from '../actions/productActions';
+import { CProductActions} from '../actions/productActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import Rating from '../components/Rating';
@@ -9,27 +9,30 @@ import Rating from '../components/Rating';
 
 export default function ProductScreen(props) {
 
-    const productId = props.match.params.id;
+    const [ productId, SetProductId ] = useState(props.match.params.id);
+    // const [ doubleLoaded, setDoubleLoaded] = useState(false);
     const [qty, setQty] = useState(1);
     // const [repeatedProductLoad, setRepeatedProductLoad] = useState(false);
     const ProductDetailsState = useSelector(state => state.productDetailsReducer);
-    const { loading, error, product, alreadyLoaded } = ProductDetailsState;
-    // console.log('PRODUCT', product);
+    const { loading, error, product } = ProductDetailsState;
+    
+    // const productActions = new CProductActions();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // productActions.ProductDetailsLoad(productId);
+    
+    const productActions = new CProductActions()
 
-    const doubleLoaded = localStorage.getItem('doubleLoaded') || false;
-
+    
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const ProductDetailsLoad = useCallback(productActions.ProductDetailsLoad, [productId])
     useEffect(() => {
-        if (doubleLoaded === false) {
-            ProductDetailsLoad(productId);
-            localStorage.setItem('doubleLoaded', true);
-        }
-        
-    }, [doubleLoaded, productId]);
+        ProductDetailsLoad(productId);
+
+    }, [ProductDetailsLoad, productId])
 
     const addToCartHandler = () => {
         props.history.push(`/cart/${productId}?qty=${qty}`)
     };
-
 
     return (
         <div>
