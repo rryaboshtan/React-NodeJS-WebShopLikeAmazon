@@ -9,7 +9,7 @@ import Rating from '../components/Rating';
 
 export default function ProductScreen(props) {
 
-    const [ productId, SetProductId ] = useState(props.match.params.id);
+    const productId = props.match.params.id;
     // const [ doubleLoaded, setDoubleLoaded] = useState(false);
     const [qty, setQty] = useState(1);
     // const [repeatedProductLoad, setRepeatedProductLoad] = useState(false);

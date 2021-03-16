@@ -20,18 +20,33 @@ export class CCartActions {
                     payload: {
                         name: data.name,
                         image: data.image,
-                        price: data.image,
+                        price: data.price,
                         countInStock: data.countInStock,
                         product: data._id,
-                        qty,
+                        qty: qty,
                     }
                 })
+
+                const cartItems = store.getState().cart.cartItems
+
+                if (cartItems) {
+                    // console.log('CART ACTIONSSSSSSSSSSSSS')
+                    localStorage.setItem('cartItems', JSON.stringify(cartItems))
+                    localStorage.setItem('my', true)
+                }
             })
             .catch(error => {
-                // store.dispatch({ type: PRODUCT_DETAILS_FAIL, payload: error.message });
                 console.log(`😱 axios request failed: ${error}`);
             })
         // }
-            // localStorage.setItem('cartItems', JSON.stringify(state.cart.))
+        // console.log('STORE GET STATEEEEEEEEEEEE', store.getState().cartReducer.cartItems)
+
+        // const cartItems = store.getState().cartReducer.cartItems
+
+        // if (cartItems) {
+        //     // console.log('CART ACTIONSSSSSSSSSSSSS')
+        //     localStorage.setItem('cartItems', JSON.stringify(cartItems))
+        //     localStorage.setItem('my', true)
+        // }
     }
 }

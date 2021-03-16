@@ -7,7 +7,7 @@ import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 
 function App() {
-    const cart = useSelector(state => state.cartReducer);
+    const cart = useSelector(state => state.cart);
     const { cartItems } = cart;
     console.log("CART ITEMSSSSSSSSSSSSSSSSSS", cartItems)
     return (

@@ -124,6 +124,10 @@ header .header-links a:hover {
           flex: 2 1 50rem;
 }
 
+.minw-30rem {
+  min-width: 30rem;
+}
+
 a {
   text-decoration: none;
 }
@@ -212,6 +216,10 @@ main .card ul li button.block {
 
 main .card ul li button:hover {
   border: 0.2rem #404040 solid;
+}
+
+main .card a img.small {
+  max-width: 5rem;
 }
 
 main .card a img.medium {

@@ -13,7 +13,9 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
                         x.product === existItem.product ? item : x
                     ,)
                 }
-            else
+            else 
+                // console.log('CART ITEMSSSSSSSSSSSSSSSSSSSSSSS', state.cartItems);
+
                 return { ...state, cartItems: [...state.cartItems, item] };
         default:
             return state;

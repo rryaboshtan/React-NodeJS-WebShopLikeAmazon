@@ -92,6 +92,9 @@ header {
 .col-50rem {
     flex: 2 1 50rem;
 }
+.minw-30rem {
+    min-width: 30rem;
+}
 
 a {
     text-decoration: none;
@@ -120,6 +123,7 @@ img {
     border: 0.1rem #a4a4a4 solid;
     font-size: 1.6rem; 
 }
+
 main {
     grid-row: 2;
     grid-column: 1;
@@ -170,6 +174,10 @@ main {
 
         a {
             img{
+                &.small {
+                    max-width: 5rem;
+                    // width: 100%;
+}
                 &.medium {
                     max-width: 29rem;
                     width: 100%;
