@@ -8,29 +8,30 @@ export class CCartActions {
 
     addToCart(productId, qty) {
         let data = {};
-        
-        if (CCartActions.productLoaded === false) {
-            axios.get(`/api/products/${productId}`)
-                .then(response => {
-                    data = response.data;
-                    CCartActions.productLoaded = true;
-                })
-                .catch(error => {
-                    // store.dispatch({ type: PRODUCT_DETAILS_FAIL, payload: error.message });
-                    console.log(`😱 axios request failed: ${error}`);
-                })
 
-            store.dispatch({
-                type: CART_ADD_ITEM,
-                payload: {
-                    name: data.name,
-                    image: data.image,
-                    price: data.image,
-                    countInStock: data.countInStock,
-                    product: data._id,
-                    qty,
-                }
+        // if (CCartActions.productLoaded === false) {
+        axios.get(`/api/products/${productId}`)
+            .then(response => {
+                data = response.data;
+                // console.log('CART ACTIONS DATAAAAAAAA', data)
+                CCartActions.productLoaded = true;
+                store.dispatch({
+                    type: CART_ADD_ITEM,
+                    payload: {
+                        name: data.name,
+                        image: data.image,
+                        price: data.image,
+                        countInStock: data.countInStock,
+                        product: data._id,
+                        qty,
+                    }
+                })
             })
-        }
+            .catch(error => {
+                // store.dispatch({ type: PRODUCT_DETAILS_FAIL, payload: error.message });
+                console.log(`😱 axios request failed: ${error}`);
+            })
+        // }
+            // localStorage.setItem('cartItems', JSON.stringify(state.cart.))
     }
 }

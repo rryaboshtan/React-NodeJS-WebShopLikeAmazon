@@ -28,6 +28,16 @@ body {
   height: 100%;
 }
 
+.badge {
+  background-color: #f02020;
+  color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  width: 2.3rem;
+  text-align: center;
+  margin-left: 0.2rem;
+}
+
 header {
   -ms-grid-column: 1;
   grid-column: 1;
