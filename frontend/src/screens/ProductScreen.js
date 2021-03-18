@@ -10,7 +10,10 @@ import Rating from '../components/Rating';
 export default function ProductScreen(props) {
 
     const productId = props.match.params.id;
+    // const [productId, setProductId] = useState(props.match.params.id);
+    // setProductId(props.match.params.id);
     const [qty, setQty] = useState(1);
+    // console.log('PRODUCT IDDDDDDDDDDD0', productId);
     const ProductDetailsState = useSelector(state => state.productDetailsReducer);
     const { loading, error, product } = ProductDetailsState;
 
@@ -19,6 +22,8 @@ export default function ProductScreen(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const ProductDetailsLoad = useCallback(productActions.ProductDetailsLoad, [productId])
     useEffect(() => {
+        console.log('PRODUCT IDDDDDDDDDDD0', productId);
+
         ProductDetailsLoad(productId);
 
     }, [ProductDetailsLoad, productId])
@@ -93,7 +98,7 @@ export default function ProductScreen(props) {
                                             {
                                                 product.countInStock > 0 && (
                                                     <>
-                                                        <li>
+                                                        {/* <li> */}
                                                             <div className="row">
                                                                 <div>Qty</div>
                                                                 <div>
@@ -107,11 +112,11 @@ export default function ProductScreen(props) {
                                                                     </select>
                                                                 </div>
                                                             </div>
-                                                        </li>
-                                                        <li>
+                                                        {/* </li> */}
+                                                        {/* <li> */}
                                                             <button onClick={addToCartHandler}
                                                                 className="primary block"> Add to Cart</button>
-                                                        </li>
+                                                        {/* </li> */}
                                                     </>)
                                             }
                                         </li>

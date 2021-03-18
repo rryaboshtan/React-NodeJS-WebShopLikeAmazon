@@ -207,6 +207,7 @@ main .card ul li button {
 }
 
 main .card ul li button.primary {
+  margin-top: 0.5rem;
   background-color: #f0c040;
 }
 

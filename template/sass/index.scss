@@ -29,8 +29,6 @@ body {
                 display: inline-block;
                 width: 2.3rem;
                 text-align: center;
-                // padding: 0.2rem 0.7rem;
-                // font-size: 1.4rem;
                 margin-left: 0.2rem;
             }
 header {
@@ -58,12 +56,7 @@ header {
             &:hover {
             text-decoration: underline;
             }
-            
-           
-            
         }
-         
-        
     }
     .header-links a {
         color: white;
@@ -159,6 +152,7 @@ main {
                     background-color: #f8f8f8;
                     cursor: pointer;
                     &.primary {
+                        margin-top: 0.5rem;
                         background-color: #f0c040;
                     }
                     &.block {
@@ -176,7 +170,6 @@ main {
             img{
                 &.small {
                     max-width: 5rem;
-                    // width: 100%;
 }
                 &.medium {
                     max-width: 29rem;
