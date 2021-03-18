@@ -11,17 +11,14 @@ export default function CartScreen(props) {
     const { cartItems } = useSelector(state => state.cart);
     const cartActions = new CCartActions();
 
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const addToCart = useCallback(cartActions.addToCart, [productId, qty])
     useEffect(() => {
         if (productId)
             addToCart(productId, qty);
-
     }, [addToCart, productId, qty]);
 
-    const removeFromCartHandler = () => {
-
-    };
     const checkoutHandler = () => {
         props.history.push('/signin?redirect=shipping')
     }
@@ -40,7 +37,7 @@ export default function CartScreen(props) {
                                 <li key={item.product}>
                                     <div className="row">
                                         <div>
-                                            <Link>
+                                            <Link to={`/${item.product}`}>
                                                 <img src={item.image} alt={item.name}
                                                     className="small"></img>
                                             </Link>
@@ -66,13 +63,14 @@ export default function CartScreen(props) {
                                             ${item.price}
                                         </div>
                                         <div>
-                                            <button type="button" onClick={() =>
-                                                removeFromCartHandler(item.product)}>
+                                            <button onClick={() =>
+                                                cartActions.removeFromCart(item.product)}>
                                                 Delete
                                         </button>
                                         </div>
                                     </div>
-                                </li>)
+                                </li>
+                            )
                         }
                     </ul>
                 }

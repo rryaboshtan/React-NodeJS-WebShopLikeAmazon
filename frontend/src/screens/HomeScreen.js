@@ -7,9 +7,7 @@ import { useSelector} from 'react-redux';
 import { CProductActions } from '../actions/productActions';
 
 export default function HomeScreen() {
-    // const [productActions, setProductAction] = setState(new CProductActions());
-    // const ref = useRef(productActions)
-    
+   
     const productActions = new CProductActions()
     
     // eslint-disable-next-line react-hooks/exhaustive-deps

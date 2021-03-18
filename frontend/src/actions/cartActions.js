@@ -1,5 +1,5 @@
 import axios from "axios"
-import { CART_ADD_ITEM } from "../constants/cartConstants";
+import { CART_ADD_ITEM, CART_REMOVE_ITEM } from "../constants/cartConstants";
 import store from "../store";
 
 export class CCartActions {
@@ -13,7 +13,6 @@ export class CCartActions {
         axios.get(`/api/products/${productId}`)
             .then(response => {
                 data = response.data;
-                // console.log('CART ACTIONS DATAAAAAAAA', data)
                 CCartActions.productLoaded = true;
                 store.dispatch({
                     type: CART_ADD_ITEM,
@@ -28,25 +27,16 @@ export class CCartActions {
                 })
 
                 const cartItems = store.getState().cart.cartItems
-
-                if (cartItems) {
-                    // console.log('CART ACTIONSSSSSSSSSSSSS')
+                if (cartItems)
                     localStorage.setItem('cartItems', JSON.stringify(cartItems))
-                    localStorage.setItem('my', true)
-                }
             })
             .catch(error => {
-                console.log(`😱 axios request failed: ${error}`);
+                console.error(`😱 axios request failed: ${error}`);
             })
-        // }
-        // console.log('STORE GET STATEEEEEEEEEEEE', store.getState().cartReducer.cartItems)
+    }
 
-        // const cartItems = store.getState().cartReducer.cartItems
-
-        // if (cartItems) {
-        //     // console.log('CART ACTIONSSSSSSSSSSSSS')
-        //     localStorage.setItem('cartItems', JSON.stringify(cartItems))
-        //     localStorage.setItem('my', true)
-        // }
+    removeFromCart(productId) {
+        store.dispatch({ type: CART_REMOVE_ITEM, payload: productId });
+        localStorage.setItem('cartItems', JSON.stringify(store.getState().cart.cartItems));
     }
 }

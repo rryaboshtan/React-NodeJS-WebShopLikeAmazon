@@ -4,4 +4,5 @@
     - HTML 5,  SCSS
     - Grid, Flex
     - React, Redux, Redux-Thunk, Axios
+    - MongoDB
     

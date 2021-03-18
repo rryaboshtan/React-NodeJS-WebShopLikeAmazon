@@ -27,8 +27,6 @@ export default function Product(props) {
                         ${product.price}
                     </div>
                 </div>
-                
-                
             </div>
         </div>)
     }

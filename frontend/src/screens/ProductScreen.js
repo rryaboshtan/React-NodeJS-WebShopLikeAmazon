@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { CProductActions} from '../actions/productActions';
+import { CProductActions } from '../actions/productActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import Rating from '../components/Rating';
@@ -10,19 +10,12 @@ import Rating from '../components/Rating';
 export default function ProductScreen(props) {
 
     const productId = props.match.params.id;
-    // const [ doubleLoaded, setDoubleLoaded] = useState(false);
     const [qty, setQty] = useState(1);
-    // const [repeatedProductLoad, setRepeatedProductLoad] = useState(false);
     const ProductDetailsState = useSelector(state => state.productDetailsReducer);
     const { loading, error, product } = ProductDetailsState;
-    
-    // const productActions = new CProductActions();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    // productActions.ProductDetailsLoad(productId);
-    
+
     const productActions = new CProductActions()
 
-    
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const ProductDetailsLoad = useCallback(productActions.ProductDetailsLoad, [productId])
     useEffect(() => {
@@ -65,7 +58,7 @@ export default function ProductScreen(props) {
                                     </li>
                                     <li>
                                         Description:
-                            <p>{product.description}</p>
+                                        <p>{product.description}</p>
                                     </li>
                                 </ul>
                             </div>
@@ -130,6 +123,5 @@ export default function ProductScreen(props) {
                     </div>
             }
         </div>
-
     )
 }
