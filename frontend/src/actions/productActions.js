@@ -22,9 +22,6 @@ export class CProductActions {
                     const data = response.data;
 
                     store.dispatch({ type: PRODUCT_LIST_LOADED, payload: data.products });
-                    // console.log('DATA PRODUCTS COUNT', data.products.length)
-                    // CProductActions.productsIdsLoaded = new Array(data.products.length)
-                    
                     CProductActions.productsLoaded = true;
                 })
                 .catch(error => {
@@ -35,21 +32,17 @@ export class CProductActions {
     }
 
     ProductDetailsLoad(productId) {
-        // console.log('PRODUCTS IDS LOADED ', CProductActions.productsIdsLoaded[productId - 1])
-        // if (CProductActions.productsIdsLoaded[productId - 1] === undefined)  {
             store.dispatch({ type: PRODUCT_DETAILS_LOADING, payload: productId });
 
             axios.get(`api/products/${productId}`)
                 .then(response => {
                     const data = response.data;
                     store.dispatch({ type: PRODUCT_DETAILS_LOADED, payload: data });
-                    // CProductActions.productsIdsLoaded[productId-1] = true;
                 })
                 .catch(error => {
                     store.dispatch({ type: PRODUCT_DETAILS_FAIL, payload: error.message });
                     console.log(`😱 Axios request failed: ${error}`);
                 })
-        // }
     }
 }
 

@@ -1,15 +1,12 @@
 import axios from "axios"
-import { CART_ADD_ITEM, CART_REMOVE_ITEM } from "../constants/cartConstants";
 import store from "../store";
+import { CART_ADD_ITEM, CART_REMOVE_ITEM } from "../constants/cartConstants";
 
 export class CCartActions {
-
-    static productLoaded = false;
 
     addToCart(productId, qty) {
         let data = {};
 
-        // if (CCartActions.productLoaded === false) {
         axios.get(`/api/products/${productId}`)
             .then(response => {
                 data = response.data;

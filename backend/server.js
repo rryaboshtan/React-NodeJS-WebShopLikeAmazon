@@ -6,40 +6,23 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
 mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazona', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
 });
 
-// app.get('/api/products', (req, res) => {
-//     res.send(data);
-// });
-
-
-app.use('/api/users', userRouter);
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use('/api/products', productRouter);
-
-
-// app.get('/api/products/:id', (req, res) => {
-//     const product = data.products.find((x) => x._id === req.params.id);
-
-//     if (product)
-//         res.send(product)
-//     else
-//         res.status(404).send({ message: 'Product not found' })
-// });
+app.use('/api/users', userRouter);
+app.use((err, req, res, next) => {
+    res.status(500).send({ message: err.message });
+});
 
 app.get('/', (req, res) => {
     res.send('Server is ready')
-});
-
-app.use((err, req, res, next) => {
-    res.status(500).send({ message: err.message });
 });
 
 const port = process.env.port || 5000;
