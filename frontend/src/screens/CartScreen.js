@@ -5,6 +5,10 @@ import { CCartActions } from '../actions/cartActions';
 import MessageBox from '../components/MessageBox';
 
 export default function CartScreen(props) {
+
+    if (!localStorage.getItem('cartItems'))
+        props.history.push('/');
+        
     const productId = props.match.params.id;
     const qty = props.location.search ? Number(props.location.search.split('=')[1]) : 1;
 
@@ -20,14 +24,14 @@ export default function CartScreen(props) {
     }, [addToCart, productId, qty]);
 
     const checkoutHandler = () => {
-        props.history.push('/signin?redirect=shipping')
+        props.history.push('/signin/signin?redirect=shipping')
     }
 
     return (
         <div className="card row top">
             <div className="col-50rem">
                 <h1>Shopping cart</h1>
-                {cartItems.length === 0 ?
+                {/*cartItems === null ||*/ cartItems.length === 0 ?
                     <MessageBox> Cart is empty <Link to="/">Go Shopping</Link>
                     </MessageBox>
                     :

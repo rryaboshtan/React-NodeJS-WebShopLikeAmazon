@@ -155,9 +155,11 @@ img {
 }
 
 /*  PRODUCTS   */
-input, button {
-  background-color: #E0FFFF;
+input,
+button {
+  background-color: #e0ffff;
   border-radius: 0.5rem;
+  height: 3rem;
 }
 
 main {
@@ -171,7 +173,7 @@ main {
 }
 
 main .card {
-  border: .1rem #c0c0c0 solid;
+  border: 0.1rem #c0c0c0 solid;
   background-color: #f8f8f8;
   border-radius: 0.5rem;
   margin: 1rem;
@@ -322,5 +324,26 @@ footer {
 
 .form label {
   margin: 1rem 0;
+  display: block;
+}
+
+.dropdown {
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.dropdown-content {
+  position: absolute;
+  display: none;
+  right: 0;
+  min-width: 12rem;
+  padding: 1rem;
+  z-index: 1;
+  background-color: #203040;
+  margin-top: 0rem;
+  border-radius: 0.5rem;
+}
+
+.dropdown:hover .dropdown-content {
   display: block;
 }

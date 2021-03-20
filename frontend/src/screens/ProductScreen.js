@@ -20,10 +20,7 @@ export default function ProductScreen(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const ProductDetailsLoad = useCallback(productActions.ProductDetailsLoad, [productId])
     useEffect(() => {
-        console.log('PRODUCT IDDDDDDDDDDD0', productId);
-
         ProductDetailsLoad(productId);
-
     }, [ProductDetailsLoad, productId])
 
     const addToCartHandler = () => {

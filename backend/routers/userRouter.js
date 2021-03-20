@@ -1,4 +1,4 @@
-import express, { request } from 'express';
+import express from 'express';
 import asyncHandler from 'express-async-handler';
 import data from '../data.js';
 import User from '../models/userModel.js';
@@ -17,7 +17,6 @@ userRouter.get('/seed',
 
 userRouter.post('/signin',
     asyncHandler(async (req, res) => {
-        // await User.deleteMany();
         const user = await User.findOne({ email: req.body.email });
 
         if (user)
