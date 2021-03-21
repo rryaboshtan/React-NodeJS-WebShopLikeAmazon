@@ -280,3 +280,15 @@ footer {
         display: block;
     }
 }
+//Checkout steps
+.checkout-steps > div {
+    border-top: 0.4rem #c0c0c0 solid;
+    color: #c0c0c0;
+    flex: 1;
+    padding: 1rem;
+    font-weight: bold;
+    &.active {
+        border-top-color: #f08000;
+        color: #f08000;
+    }
+}

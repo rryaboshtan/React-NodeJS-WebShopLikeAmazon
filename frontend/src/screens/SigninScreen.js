@@ -20,8 +20,7 @@ export default function SigninScreen(props) {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        
-            dispatch(signin(email, password));
+        dispatch(signin(email, password));
     }
 
     useEffect(() => {
@@ -36,7 +35,7 @@ export default function SigninScreen(props) {
             <form className="form" onSubmit={submitHandler}>
                 <div>
                     <h1>
-                        Sign In 
+                        Sign In
                     </h1>
                 </div>
                 {
@@ -49,7 +48,7 @@ export default function SigninScreen(props) {
                         id="email"
                         placeholder="Enter email"
                         required
-                        onChange = { e => setEmail(e.target.value)}></input>
+                        onChange={e => setEmail(e.target.value)}></input>
                 </div>
                 <div>
                     <label htmlFor="password"> Password </label>
@@ -60,7 +59,6 @@ export default function SigninScreen(props) {
                         required
                         onChange={e => setPassword(e.target.value)}></input>
                 </div>
-                
                 <div>
                     <label />
                     <button className="primary" type="submit">

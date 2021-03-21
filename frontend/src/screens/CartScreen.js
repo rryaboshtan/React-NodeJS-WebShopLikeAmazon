@@ -24,7 +24,8 @@ export default function CartScreen(props) {
     }, [addToCart, productId, qty]);
 
     const checkoutHandler = () => {
-        props.history.push('/signin/signin?redirect=shipping')
+        // props.history.push('/shipping/signin?redirect=shipping')
+        props.history.push('/shipping/shipping')
     }
 
     return (

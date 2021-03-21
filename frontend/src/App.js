@@ -1,24 +1,21 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Link, Route} from 'react-router-dom';
-// import { useHistory} from 'react-router';
 
 import { signout } from './actions/userActions';
 import CartScreen from './screens/CartScreen';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 import RegisterScreen from './screens/RegisterScreen';
+import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import SigninScreen from './screens/SigninScreen';
 
 function App() {
     const cart = useSelector(state => state.cart);
     const { cartItems } = cart;
     const { userInfo } = useSelector(state => state.userSignin);
-    // const history = useHistory();
-    // console.log("HISTORYYYYYYYYYYYYYYYY", history);
     const dispatch = useDispatch();
     const signoutHandler = () => {
-        // history.goBack();
         dispatch(signout());
     }
 
@@ -65,6 +62,7 @@ function App() {
                     <Route path="/cart/:id?" component={CartScreen} exact></Route>
                     <Route path="/signin/signin" component={SigninScreen} exact></Route>
                     <Route path="/register/register" component={RegisterScreen} exact></Route>
+                    <Route path="/shipping/shipping" component={ShippingAddressScreen} exact></Route>
 
                     <Route path="/" component={HomeScreen} exact></Route>
 

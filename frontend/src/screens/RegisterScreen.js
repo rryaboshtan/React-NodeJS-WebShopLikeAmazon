@@ -10,7 +10,7 @@ export default function RegisterScreen(props) {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [passwordsNotMatch, setPasswordsNotMatch] = useState(false);
-    let [userInfo, setUserInfo] = useState(null);
+    const [userInfo, setUserInfo] = useState(null);
 
 
     const redirect = props.location.search
@@ -19,7 +19,6 @@ export default function RegisterScreen(props) {
 
     let userRegisterState = useSelector(state => state.userRegister);
 
-    // let userInfo = {};
     let error = false;
     const dispatch = useDispatch();
 
@@ -35,8 +34,6 @@ export default function RegisterScreen(props) {
             setPasswordsNotMatch(false);
             props.history.push(redirect);
         }
-
-
     }
 
     useEffect(() => {
