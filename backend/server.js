@@ -11,6 +11,9 @@ mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazona', {
     useUnifiedTopology: true,
     useCreateIndex: true,
 });
+// var db = mongoose.connection;
+
+// db.on("error", console.error.bind(console, "connection error:"));
 
 const app = express();
 app.use(express.json());

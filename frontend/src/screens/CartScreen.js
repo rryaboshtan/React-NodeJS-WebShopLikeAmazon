@@ -6,8 +6,8 @@ import MessageBox from '../components/MessageBox';
 
 export default function CartScreen(props) {
 
-    if (!localStorage.getItem('cartItems'))
-        props.history.push('/');
+    // if (!localStorage.getItem('cartItems'))
+    //     props.history.push('/');
         
     const productId = props.match.params.id;
     const qty = props.location.search ? Number(props.location.search.split('=')[1]) : 1;

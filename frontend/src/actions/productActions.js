@@ -34,7 +34,7 @@ export class CProductActions {
     ProductDetailsLoad(productId) {
             store.dispatch({ type: PRODUCT_DETAILS_LOADING, payload: productId });
 
-            axios.get(`api/products/${productId}`)
+        axios.get('api/products/' + productId)
                 .then(response => {
                     const data = response.data;
                     store.dispatch({ type: PRODUCT_DETAILS_LOADED, payload: data });

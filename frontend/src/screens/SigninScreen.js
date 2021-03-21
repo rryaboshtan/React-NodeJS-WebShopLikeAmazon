@@ -9,6 +9,7 @@ export default function SigninScreen(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+
     const redirect = props.location.search
         ? props.location.search.split('=')[1]
         : '/';
@@ -19,12 +20,15 @@ export default function SigninScreen(props) {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        dispatch(signin(email, password));
+        
+            dispatch(signin(email, password));
     }
 
     useEffect(() => {
-        if (userInfo)
+        if (userInfo) {
+            console.log('USER INFO: ', userInfo)
             props.history.push(redirect);
+        }
     }, [props.history, redirect, userInfo]);
 
     return (
@@ -35,9 +39,6 @@ export default function SigninScreen(props) {
                         Sign In 
                     </h1>
                 </div>
-                {/* {
-                    loading && <LoadingBox></LoadingBox>
-                } */}
                 {
                     error && <MessageBox type="danger">{error}</MessageBox>
                 }
@@ -51,7 +52,7 @@ export default function SigninScreen(props) {
                         onChange = { e => setEmail(e.target.value)}></input>
                 </div>
                 <div>
-                    <label htmlFor="password"> Email address </label>
+                    <label htmlFor="password"> Password </label>
                     <input
                         type="password"
                         id="password"
@@ -59,6 +60,7 @@ export default function SigninScreen(props) {
                         required
                         onChange={e => setPassword(e.target.value)}></input>
                 </div>
+                
                 <div>
                     <label />
                     <button className="primary" type="submit">
@@ -68,8 +70,8 @@ export default function SigninScreen(props) {
                 <div>
                     <label />
                     <div>
-                        New customer? {''}
-                        <Link to = "/register">Create your account</Link>
+                        New customer?
+                        <Link to={`/register/register?redirect=${redirect}`}>Create your account</Link>
                     </div>
                 </div>
             </form>

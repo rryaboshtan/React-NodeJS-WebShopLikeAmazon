@@ -7,6 +7,7 @@ import { signout } from './actions/userActions';
 import CartScreen from './screens/CartScreen';
 import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
+import RegisterScreen from './screens/RegisterScreen';
 import SigninScreen from './screens/SigninScreen';
 
 function App() {
@@ -26,9 +27,11 @@ function App() {
             <div className="grid-container">
                 <header className="row">
                     <div className="brand">
-                        <button>
-                            &#9776;
-                    </button>
+                        <Link to="/">
+                            <button >
+                                &#9776;
+                            </button>
+                        </Link>
                         <Link to="/">
                             amazon
                         </Link>
@@ -61,6 +64,7 @@ function App() {
                 <main className="main">
                     <Route path="/cart/:id?" component={CartScreen} exact></Route>
                     <Route path="/signin/signin" component={SigninScreen} exact></Route>
+                    <Route path="/register/register" component={RegisterScreen} exact></Route>
 
                     <Route path="/" component={HomeScreen} exact></Route>
 

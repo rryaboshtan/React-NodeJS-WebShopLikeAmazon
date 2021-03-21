@@ -1,6 +1,6 @@
 import express from 'express';
 import asyncHandler from 'express-async-handler';
-import data from '../data.js';
+// import data from '../data.js';
 import Product from '../models/productModel.js';
 
 const productRouter = express.Router();
@@ -15,15 +15,14 @@ productRouter.get('/',
 
 productRouter.get('/seed',
     asyncHandler(async (req, res) => {
-        await Product.deleteMany();
-        const createdProducts = await Product.insertMany(data.products);
+        // await Product.deleteMany();
+        const createdProducts = await Product.insertManyfind({});
 
         res.send({ createdProducts });
     }));
 
 productRouter.get('/:id',
     asyncHandler(async (req, res) => {
-        // await Product.deleteMany();
         const product = await Product.findById(req.params.id);
         if (product)
             res.send(product)

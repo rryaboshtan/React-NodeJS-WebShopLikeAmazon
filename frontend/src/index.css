@@ -197,7 +197,7 @@ main .card ul li {
 main .card ul li input,
 main .card ul li select,
 main .card ul li textarea {
-  padding: 1rem;
+  padding: 0.6rem;
   border-radius: 0.5rem;
   border: 0.1rem #a4a4a4 solid;
   font-size: 1.6rem;
@@ -210,7 +210,7 @@ main .card ul li textarea:hover {
 }
 
 main .card ul li button {
-  padding: 1rem;
+  padding: 0.6rem;
   border-radius: 0.5rem;
   border: 0.1rem #a4a4a4 solid;
   font-size: 1.6rem;

@@ -116,7 +116,7 @@ img {
 
 /*  PRODUCTS   */
 @mixin buttonSelectBaseStyles() {
-    padding: 1rem;
+    padding: 0.6rem;
     border-radius: 0.5rem;
     border: 0.1rem #a4a4a4 solid;
     font-size: 1.6rem;
@@ -160,6 +160,7 @@ main {
                 button {
                     @include buttonSelectBaseStyles();
                     background-color: #f8f8f8;
+                   
                     cursor: pointer;
                     &.primary {
                         margin-top: 0.5rem;
