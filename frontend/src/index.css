@@ -136,6 +136,10 @@ a:hover {
   color: #ff8000;
 }
 
+a:hover[data-link="imageLink"] {
+  background-color: #f0c040;
+}
+
 h1 {
   font-size: 1.8rem;
   padding: 1rem 0;
@@ -322,9 +326,8 @@ footer {
   margin: 1rem;
 }
 
-.form label {
-  margin: 1rem 0;
-  display: block;
+label[data-label="pay"] {
+  margin-bottom: -1rem;
 }
 
 .dropdown {

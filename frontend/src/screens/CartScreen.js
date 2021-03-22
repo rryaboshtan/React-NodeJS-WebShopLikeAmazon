@@ -5,9 +5,6 @@ import { CCartActions } from '../actions/cartActions';
 import MessageBox from '../components/MessageBox';
 
 export default function CartScreen(props) {
-
-    // if (!localStorage.getItem('cartItems'))
-    //     props.history.push('/');
         
     const productId = props.match.params.id;
     const qty = props.location.search ? Number(props.location.search.split('=')[1]) : 1;
@@ -42,7 +39,7 @@ export default function CartScreen(props) {
                                 <li key={item.product}>
                                     <div className="row">
                                         <div>
-                                            <Link to={`/${item.product}`}>
+                                            <Link to={`/${item.product}`} data-link="imageLink">
                                                 <img src={item.image} alt={item.name}
                                                     className="small"></img>
                                             </Link>

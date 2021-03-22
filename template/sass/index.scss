@@ -96,6 +96,11 @@ a {
 a:hover {
     color: #ff8000;
 }
+a:hover[data-link="imageLink"] {
+    // border: 0.5rem #203040 solid;
+    background-color: #f0c040;
+
+}
 
 h1 {
     font-size: 1.8rem;
@@ -253,10 +258,16 @@ footer {
     flex-direction: column;
     margin: 1rem;
 }
-.form label {
-    margin: 1rem 0;
-    display: block;
+// .form label {
+    // margin: 0rem 0;
+    // display: block;
+// }
+label[data-label = "pay"] {
+    margin-bottom: -1rem;
 }
+// input[type = 'radio'] {
+//     display: inline;
+// }
 
 //DROPDOWN
 .dropdown {
