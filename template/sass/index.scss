@@ -132,6 +132,9 @@ button {
     border-radius: 0.5rem;
     height: 3rem;
 }
+ul {
+    list-style-type: none;
+}
 
 main {
     grid-row: 2;
@@ -200,7 +203,6 @@ main {
             display: flex;
             flex-direction: column;
             align-content: space-between;
-
             .rating {
                 span {
                     color: #f0c040;

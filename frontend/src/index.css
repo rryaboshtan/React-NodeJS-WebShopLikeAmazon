@@ -166,6 +166,10 @@ button {
   height: 3rem;
 }
 
+ul {
+  list-style-type: none;
+}
+
 main {
   -ms-grid-row: 2;
   grid-row: 2;

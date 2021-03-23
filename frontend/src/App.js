@@ -6,6 +6,7 @@ import { signout } from './actions/userActions';
 import CartScreen from './screens/CartScreen';
 import HomeScreen from './screens/HomeScreen';
 import PaymentMethodScreen from './screens/PaymentMethodScreen';
+import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import ProductScreen from './screens/ProductScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import ShippingAddressScreen from './screens/ShippingAddressScreen';
@@ -54,7 +55,6 @@ function App() {
                                         </Link>
                                     </ul>
                                 </div>
-
                                 : <Link to="/signin/signin"> Sign In</Link>
                         }
                     </div>
@@ -65,9 +65,8 @@ function App() {
                     <Route path="/register/register" component={RegisterScreen} exact></Route>
                     <Route path="/shipping/shipping" component={ShippingAddressScreen} exact></Route>
                     <Route path="/payment/payment" component={PaymentMethodScreen} exact></Route>
-
+                    <Route path="/placeorder/placeorder" component={PlaceOrderScreen} exact></Route>
                     <Route path="/" component={HomeScreen} exact></Route>
-
                     <Route path="/:id" component={ProductScreen} exact></Route>
                 </main>
 
